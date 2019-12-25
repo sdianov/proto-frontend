@@ -1,0 +1,28 @@
+<mat-drawer-container class="example-container mat-typography" autosize>
+  <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+
+    <mat-nav-list>
+      <mat-list-item (click)="changeView('dashboard')">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Dashboard</h4>
+      </mat-list-item>
+      <mat-list-item (click)="changeView('workstep')">
+        <mat-icon mat-list-icon>assignment</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Work steps</h4>
+      </mat-list-item>
+      <mat-list-item (click)="changeView('admin')">
+        <mat-icon mat-list-icon>domain</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Administration</h4>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <ng-container [ngSwitch]="selectedComponent">
+      <app-workstep-view *ngSwitchCase='"workstep"'></app-workstep-view>
+      <app-dashboard-view *ngSwitchCase='"dashboard"'></app-dashboard-view>
+      <app-admin-view *ngSwitchCase='"admin"'></app-admin-view>
+    </ng-container>
+  </div>
+
+</mat-drawer-container>
