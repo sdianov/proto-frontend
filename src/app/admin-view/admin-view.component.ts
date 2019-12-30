@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiSchemaService } from './api-schema.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-admin-view',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminViewComponent implements OnInit {
 
-  constructor() { }
+  data: string;
+
+  constructor(private schemaService: ApiSchemaService) {
+  }
 
   ngOnInit() {
+    this.schemaService.getSchema().subscribe(data => {
+      this.data = JSON.stringify(data, null, 2);
+    });
   }
 
 }
