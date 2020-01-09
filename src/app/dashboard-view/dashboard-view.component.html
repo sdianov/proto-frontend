@@ -1,24 +1,6 @@
-<p>dashboard-view works!</p>
+<p>Resource View</p>
 <table>
-  <tr>
-    <td>ROW</td>
-  </tr>
-  <tr>
-    <td>ROW</td>
-  </tr>
-  <tr>
-    <td>ROW</td>
-  </tr>
-  <tr>
-    <td>ROW</td>
-  </tr>
-  <tr>
-    <td>ROW</td>
-  </tr>
-  <tr>
-    <td>ROW</td>
-  </tr>
-  <tr>
-    <td>ROW</td>
+  <tr *ngFor="let row of dataRows">
+    <td>{{ row.id }}</td>
   </tr>
 </table>

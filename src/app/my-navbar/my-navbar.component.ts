@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MyNavbarComponent implements OnInit {
 
   isExpanded: boolean;
-  selectedComponent = 'workstep';
+  selectedComponent = 'dashboard';
 
   constructor() {
   }

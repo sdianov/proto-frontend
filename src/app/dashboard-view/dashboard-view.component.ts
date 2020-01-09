@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiDataService } from './api-data.service';
 
 @Component({
   selector: 'app-dashboard-view',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardViewComponent implements OnInit {
 
-  constructor() { }
+  dataRows: any[];
+
+  constructor(private service: ApiDataService) {
+  }
 
   ngOnInit() {
+
+    this.service.getGenericItems('group').subscribe(data => {
+      this.dataRows = data as any[];
+    });
   }
 
 }

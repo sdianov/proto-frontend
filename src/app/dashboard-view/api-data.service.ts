@@ -9,5 +9,9 @@ export class ApiDataService {
   constructor(private http: HttpClient) {
   }
 
+  getGenericItems(typeName: string) {
+    return this.http.get('/api/rest/' + typeName);
+  }
+
 
 }

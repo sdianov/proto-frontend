@@ -10,13 +10,14 @@ import { HttpClient } from '@angular/common/http';
 export class AdminViewComponent implements OnInit {
 
   data: string;
+  typeList: ResourceType[];
 
   constructor(private schemaService: ApiSchemaService) {
   }
 
   ngOnInit() {
     this.schemaService.getSchema().subscribe(data => {
-      this.data = JSON.stringify(data, null, 2);
+      this.typeList = data;
     });
   }
 

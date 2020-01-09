@@ -1,0 +1,12 @@
+.mat-cell {
+  border-right: 1px solid gray;
+  padding: 10px;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #777;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
